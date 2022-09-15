@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mirea App</string>
+    <string name="mirea_logo">Mirea Logo</string>
+    <string name="bank">BANK</string>
+    <string name="log_in">LOG IN</string>
+    <string name="sign_up">SIGN UP</string>
 </resources>
