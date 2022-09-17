@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_x="129dp"
     android:layout_y="303dp"
-    android:background="#002553"
+    android:background="@color/backgroundScreen"
     tools:context=".Main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,7 +37,7 @@
             android:layout_height="49dp"
             android:layout_marginTop="23dp"
             android:layout_marginEnd="30dp"
-            android:background="#002553"
+            android:background="@color/backgroundScreen"
             app:layout_constraintEnd_toEndOf="@+id/bankText"
             app:layout_constraintStart_toStartOf="@+id/bankText"
             app:layout_constraintTop_toTopOf="@+id/bankText">
@@ -54,7 +54,7 @@
             android:gravity="center"
             android:layerType="none"
             android:text="@string/bank"
-            android:textColor="#50C878"
+            android:textColor="@color/lightGreen"
             android:textSize="64sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/bankLogoImageView" />
@@ -76,7 +76,7 @@
             android:layout_width="228dp"
             android:layout_height="48dp"
             android:background="@drawable/round_style"
-            android:backgroundTint="#50C878"
+            android:backgroundTint="@color/lightGreen"
             android:elevation="55dp"
             android:fontFamily="@font/bold_italic"
             android:onClick="logIn"
@@ -97,7 +97,7 @@
             android:layout_width="228dp"
             android:layout_height="48dp"
             android:background="@drawable/round_style"
-            android:backgroundTint="#3B9C5C"
+            android:backgroundTint="@color/darkGreen"
             android:fontFamily="@font/bold_italic"
             android:onClick="signUp"
             android:text="@string/sign_up"
