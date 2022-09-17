@@ -13,15 +13,23 @@ public class Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
-    }
-    public void logIn(View view){
-        Button login= findViewById(R.id.loginButton);
-        Log.i("Info","Log in button tapped");
-        //TODO: Add navigation to Log In screen
-    }
-    public void signUp(View view){
-        Button signup= findViewById(R.id.signupButton);
-        Log.i("Info","Sign up button tapped");
-        //TODO: Add navigation to Sign Up screen
+        Button login = findViewById(R.id.loginButton);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("Info", "Log in button tapped");
+                //TODO: Add navigation to Log In screen
+            }
+        });
+
+
+        Button signup = findViewById(R.id.signupButton);
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("Info", "Sign up button tapped");
+                //TODO: Add navigation to Sign Up screen
+            }
+        });
     }
 }
