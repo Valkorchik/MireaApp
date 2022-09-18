@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_x="129dp"
+    android:layout_y="303dp"
+    android:background="@color/backgroundScreen"
+    tools:context=".Main">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="326dp"
+        android:layout_height="216dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="186dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/bankLogoImageView"
+            android:layout_width="326dp"
+            android:layout_height="209dp"
+            android:contentDescription="@string/mirea_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.428"
+            app:srcCompat="@drawable/bank_logo_image" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="136dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/backgroundScreen"
+            app:layout_constraintEnd_toEndOf="@+id/bankText"
+            app:layout_constraintStart_toStartOf="@+id/bankText"
+            app:layout_constraintTop_toTopOf="@+id/bankText">
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/bankText"
+            android:layout_width="214dp"
+            android:layout_height="71dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/medium_italic"
+            android:gravity="center"
+            android:layerType="none"
+            android:text="@string/bank"
+            android:textColor="@color/lightGreen"
+            android:textSize="64sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/bankLogoImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="228dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="503dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/loginButton"
+
+            android:layout_width="228dp"
+            android:layout_height="48dp"
+            android:background="@drawable/round_style"
+            android:backgroundTint="@color/lightGreen"
+            android:elevation="55dp"
+            android:fontFamily="@font/bold_italic"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="10"
+            android:text="@string/log_in"
+            android:textAlignment="center"
+            android:textColor="#FBFBFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/signupButton"
+            android:layout_width="228dp"
+            android:layout_height="48dp"
+            android:background="@drawable/round_style"
+            android:backgroundTint="@color/darkGreen"
+            android:fontFamily="@font/bold_italic"
+            android:text="@string/sign_up"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
