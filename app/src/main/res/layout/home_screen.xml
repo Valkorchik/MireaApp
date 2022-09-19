@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_x="129dp"
-    android:layout_y="303dp"
+    android:layout_x="0dp"
+    android:layout_y="0dp"
     android:background="@color/backgroundScreen"
     tools:context=".Main">
 

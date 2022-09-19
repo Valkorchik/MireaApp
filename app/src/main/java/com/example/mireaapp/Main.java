@@ -13,7 +13,7 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_screedn);
+        setContentView(R.layout.home_screen);
         Button login = findViewById(R.id.loginButton);
         login.setOnClickListener(view -> {
             Log.i("Info", "Log in button tapped");
