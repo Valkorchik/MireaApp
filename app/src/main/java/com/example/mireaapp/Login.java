@@ -1,32 +1,27 @@
 package com.example.mireaapp;
 
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
-
-public class Main extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_screen);
+        setContentView(R.layout.login_screen);
         Button login = findViewById(R.id.loginButton);
-        login.setOnClickListener(view -> {
+        login.setOnClickListener(view->{
             Log.i("Info", "Log in button tapped");
-            Intent intent= new Intent(this,Login.class);
-            startActivity(intent);
+            //TODO: Do navigation to main menu screen
         });
-
-
-        Button signup = findViewById(R.id.signupButton);
+        Button signup=findViewById(R.id.signupButton);
         signup.setOnClickListener(view -> {
             Log.i("Info", "Sign up button tapped");
             //TODO: Add navigation to Sign Up screen
         });
+
     }
 }

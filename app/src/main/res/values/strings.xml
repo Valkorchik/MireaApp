@@ -4,4 +4,6 @@
     <string name="bank">BANK</string>
     <string name="log_in">LOG IN</string>
     <string name="sign_up">SIGN UP</string>
+    <string name="card_text_field">Number of your card</string>
+    <string name="password_text_field">Password</string>
 </resources>
