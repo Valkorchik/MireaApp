@@ -77,31 +77,35 @@
             android:ems="10"
             android:fontFamily="@font/medium_italic"
             android:hint="@string/card_text_field"
+            android:importantForAutofill="no"
             android:inputType="numberDecimal"
             android:letterSpacing="0.02"
-            android:paddingLeft="23dp"
+            android:maxLength="16"
+            android:paddingStart="23dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/hintColor"
             android:textSize="24sp"
-            android:textColor="@color/black"
-            android:maxLength="16"
-            />
+            tools:ignore="TextContrastCheck" />
 
         <EditText
-            android:background="@drawable/round_textfield"
             android:id="@+id/editTextPassword"
             android:layout_width="326dp"
             android:layout_height="55dp"
-            android:ems="10"
-            android:inputType="textPassword"
             android:layout_marginTop="36dp"
-            android:textColorHint="@color/hintColor"
-            android:letterSpacing="0.02"
-            android:paddingLeft="23dp"
+            android:background="@drawable/round_textfield"
+            android:ems="10"
             android:fontFamily="@font/medium_italic"
-            android:textSize="24sp"
             android:hint="@string/password_text_field"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:letterSpacing="0.02"
+            android:paddingStart="23dp"
+            android:paddingEnd="10dp"
             android:textColor="@color/black"
-            />
+            android:textColorHint="@color/hintColor"
+            android:textSize="24sp"
+            tools:ignore="TextContrastCheck" />
 
 
     </LinearLayout>
