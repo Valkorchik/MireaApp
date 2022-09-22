@@ -6,4 +6,6 @@
     <string name="sign_up">SIGN UP</string>
     <string name="card_text_field">Number of your card</string>
     <string name="password_text_field">Password</string>
+    <string name="full_name">Full name</string>
+    <string name="date">Date of Birth</string>
 </resources>

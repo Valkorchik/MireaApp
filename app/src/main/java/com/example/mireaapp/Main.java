@@ -26,7 +26,8 @@ public class Main extends AppCompatActivity {
         Button signup = findViewById(R.id.signupButton);
         signup.setOnClickListener(view -> {
             Log.i("Info", "Sign up button tapped");
-            //TODO: Add navigation to Sign Up screen
+            Intent intent=new Intent(this,Registration.class);
+            startActivity(intent);
         });
     }
 }

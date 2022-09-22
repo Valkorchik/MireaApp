@@ -7,23 +7,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 
-public class Login extends AppCompatActivity {
+public class Registration extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_screen);
-        Button login = findViewById(R.id.loginButton);
-        login.setOnClickListener(view->{
-            Log.i("Info", "Log in button tapped");
-            //TODO: Do navigation to main menu screen
-        });
+        setContentView(R.layout.registration_screen);
         Button signup=findViewById(R.id.signupButton);
         signup.setOnClickListener(view -> {
             Log.i("Info", "Sign up button tapped");
-            Intent intent=new Intent(this,Registration.class);
+            Intent intent=new Intent(this,Login.class);
             startActivity(intent);
         });
-
     }
 }
