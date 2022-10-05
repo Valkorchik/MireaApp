@@ -96,7 +96,7 @@
             android:background="@drawable/round_textfield"
             android:ems="10"
             android:fontFamily="@font/medium_italic"
-            android:hint="@string/date"
+            android:hint="@string/dateBirth"
             android:inputType="text|date"
             android:letterSpacing="0.02"
             android:paddingStart="23dp"

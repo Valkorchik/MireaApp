@@ -16,7 +16,8 @@ public class Login extends AppCompatActivity {
         Button login = findViewById(R.id.loginButton);
         login.setOnClickListener(view->{
             Log.i("Info", "Log in button tapped");
-            //TODO: Do navigation to main menu screen
+            Intent intent=new Intent(this,MainMenu.class);
+            startActivity(intent);
         });
         Button signup=findViewById(R.id.signupButton);
         signup.setOnClickListener(view -> {

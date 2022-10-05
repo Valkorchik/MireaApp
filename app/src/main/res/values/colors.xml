@@ -12,4 +12,8 @@
     <color name="darkGreen">#3B9C5C</color>
     <color name="whiteTextField">#D9D9D9</color>
     <color name="hintColor">#889D99</color>
+    <color name="firstCardColor">#2EA387</color>
+    <color name="secondCardColor">#2E8EA3</color>
+    <color name="cardName">#475B6F</color>
+    <color  name="cardInfo">#343E3E</color>
 </resources>

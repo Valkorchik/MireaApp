@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:enabled="true"
+        android:icon="@drawable/home_icon_selection"/>
+    <item
+        android:id="@+id/convert"
+        android:title="@string/convert"
+        android:enabled="true"
+        android:icon="@drawable/convert_icon_selector"/>
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings"
+        android:enabled="true"
+        android:icon="@drawable/settings_icon_selector"/>
+</menu>
