@@ -29,17 +29,7 @@
             app:layout_constraintVertical_bias="0.428"
             app:srcCompat="@drawable/bank_logo_image" />
 
-        <FrameLayout
-            android:id="@+id/frameLayout2"
-            android:layout_width="55.43dp"
-            android:layout_height="21.1dp"
-            android:layout_marginTop="68dp"
-            android:layout_marginStart="45dp"
-            android:background="@color/backgroundScreen"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-        </FrameLayout>
 
         <TextView
             android:id="@+id/bankText"
@@ -63,7 +53,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        android:background="@color/whiteTextField"
+        android:background="@color/white_grey"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,7 +160,7 @@
                         android:layout_marginTop="30dp"
                         android:text="@string/NumberOfCard1"
                         android:textAlignment="center"
-                        android:textColor="@color/whiteTextField"
+                        android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
                         android:textSize="22sp"
                         android:letterSpacing="0.07"
@@ -209,7 +199,7 @@
                        android:layout_marginStart="62dp"
                         android:text="@string/pinCard1"
                         android:textAlignment="center"
-                        android:textColor="@color/whiteTextField"
+                        android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
                         android:textSize="21sp"
                         android:letterSpacing="0.07"
@@ -249,7 +239,7 @@
                         android:layout_marginStart="76dp"
                         android:text="@string/dateCard1"
                         android:textAlignment="center"
-                        android:textColor="@color/whiteTextField"
+                        android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
                         android:textSize="21sp"
                         android:letterSpacing="0.07"
@@ -289,7 +279,7 @@
                         android:layout_marginStart="133dp"
                         android:text="@string/cvcCard1"
                         android:textAlignment="center"
-                        android:textColor="@color/whiteTextField"
+                        android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
                         android:textSize="21sp"
                         android:letterSpacing="0.07"
@@ -370,7 +360,7 @@
                         android:layout_marginTop="30dp"
                         android:text="@string/numberOfCard2"
                         android:textAlignment="center"
-                        android:textColor="@color/whiteTextField"
+                        android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
                         android:textSize="22sp"
                         android:letterSpacing="0.07"
@@ -409,7 +399,7 @@
                         android:layout_marginStart="62dp"
                         android:text="@string/pinCard2"
                         android:textAlignment="center"
-                        android:textColor="@color/whiteTextField"
+                        android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
                         android:textSize="21sp"
                         android:letterSpacing="0.07"
@@ -449,7 +439,7 @@
                         android:layout_marginStart="76dp"
                         android:text="@string/dateCard2"
                         android:textAlignment="center"
-                        android:textColor="@color/whiteTextField"
+                        android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
                         android:textSize="21sp"
                         android:letterSpacing="0.07"
@@ -489,7 +479,7 @@
                         android:layout_marginStart="133dp"
                         android:text="@string/cvvCard2"
                         android:textAlignment="center"
-                        android:textColor="@color/whiteTextField"
+                        android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
                         android:textSize="21sp"
                         android:letterSpacing="0.07"

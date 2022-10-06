@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_x="0dp"
     android:layout_y="0dp"
-    android:background="@color/backgroundScreen"
+    android:background="@drawable/gradient_background"
     tools:context=".Main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,18 +31,6 @@
             app:layout_constraintVertical_bias="0.428"
             app:srcCompat="@drawable/bank_logo_image" />
 
-        <FrameLayout
-            android:id="@+id/frameLayout2"
-            android:layout_width="136dp"
-            android:layout_height="49dp"
-            android:layout_marginTop="23dp"
-            android:layout_marginEnd="30dp"
-            android:background="@color/backgroundScreen"
-            app:layout_constraintEnd_toEndOf="@+id/bankText"
-            app:layout_constraintStart_toStartOf="@+id/bankText"
-            app:layout_constraintTop_toTopOf="@+id/bankText">
-
-        </FrameLayout>
 
         <TextView
             android:id="@+id/bankText"

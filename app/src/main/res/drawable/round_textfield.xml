@@ -2,6 +2,6 @@
 <!--  res/drawable/rounded_edittext.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <solid android:color="@color/whiteTextField" />
+    <solid android:color="@color/white_grey" />
     <corners android:radius="18dp" />
 </shape>

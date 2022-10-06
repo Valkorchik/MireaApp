@@ -1,9 +1,14 @@
 package com.example.mireaapp;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.os.Bundle;
+import android.text.TextPaint;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,4 +35,5 @@ public class Main extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
 }
