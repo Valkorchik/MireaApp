@@ -28,4 +28,11 @@
     <string name="cvvCard2">432</string>
     <string name="mir_logo">mir logo</string>
     <string name="addCardButton">ADD CARD</string>
+    <string name="crypto_icon">crypto icon</string>
+    <string name="add_money">ADD MONEY</string>
+    <string name="currency_transfer">Currency transfer</string>
+    <string name="btc">BTC</string>
+    <string name="card1CurrencyValue">...?</string>
+    <string name="eth">ETH</string>
+    <string name="ltc">LTC</string>
 </resources>

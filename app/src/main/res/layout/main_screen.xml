@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainMenu"
-    android:background="@color/backgroundScreen">
+    android:background="@drawable/gradient_background">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="134.85dp"
@@ -55,7 +55,7 @@
         android:id="@+id/bottomNavigationView"
         android:background="@color/white_grey"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +70,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="375dp"
-        android:layout_height="628dp"
+        android:layout_height="560dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="113dp"
         android:background="@drawable/round_textfield"
@@ -92,7 +92,7 @@
             android:textColor="@color/hintColor"
             android:fontFamily="@font/medium_italic"
             android:textSize="36sp"
-            android:letterSpacing="0.13"
+            android:letterSpacing="-0.05"
             android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -112,8 +112,7 @@
                 android:layout_height="188dp"
                 android:layout_marginTop="15dp"
 
-                android:background="@drawable/round_textfield"
-                android:backgroundTint="@color/firstCardColor"
+                android:background="@drawable/gradient_card1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
@@ -310,10 +309,9 @@
                 android:id="@+id/second_card"
                 android:layout_width="336dp"
                 android:layout_height="188dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:visibility="invisible"
-                android:background="@drawable/round_textfield"
-                android:backgroundTint="@color/secondCardColor"
+                android:background="@drawable/gradient_card2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
@@ -536,6 +534,22 @@
                 app:layout_constraintHorizontal_bias="0.49"
                 app:layout_constraintStart_toStartOf="parent" />
         </LinearLayout>
+        <Button
+            android:id="@+id/addMoneyButton"
+            android:layout_width="228dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginTop="495dp"
+            android:background="@drawable/round_style"
+            android:backgroundTint="@color/darkGreen"
+            android:fontFamily="@font/bold_italic"
+            android:text="@string/add_money"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

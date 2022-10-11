@@ -28,8 +28,8 @@ public class MainMenu extends AppCompatActivity {
                    Toast.makeText(this, "You are already on that screen", Toast.LENGTH_SHORT).show();
                    break;
                case R.id.convert:
-                   //Intent intentConvert=new Intent(this,Registration.class);
-                 //  startActivity(intentConvert);
+                   Intent intentConvert=new Intent(this,CurrencyTransfer.class);
+                   startActivity(intentConvert);
                    break;
                case R.id.settings:
                   // Intent intentSettings=new Intent(this,Login.class);
