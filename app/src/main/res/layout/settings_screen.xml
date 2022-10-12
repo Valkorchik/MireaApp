@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings"
+    android:background="@drawable/gradient_background">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:background="@color/white_grey"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconSize="60dp"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/hintColor"
+        android:textAlignment="center"
+        app:itemTextAppearanceActive="@style/Widget.BottomNavigationView"
+        app:itemTextAppearanceInactive="@style/Widget.BottomNavigationView"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="134.85dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/bankLogoImageView"
+            android:layout_width="134.85dp"
+            android:layout_height="86.45dp"
+            android:contentDescription="@string/mirea_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.428"
+            app:srcCompat="@drawable/bank_logo_image" />
+
+
+
+        <TextView
+            android:id="@+id/bankText"
+            android:layout_width="88dp"
+            android:layout_height="41dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/medium_italic"
+            android:gravity="center"
+            android:layerType="none"
+            android:text="@string/bank"
+            android:textColor="@color/lightGreen"
+            android:textSize="28sp"
+            app:layout_constraintTop_toTopOf="@+id/bankLogoImageView"
+            app:layout_constraintEnd_toEndOf="@+id/bankLogoImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="375dp"
+        android:layout_height="560dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/round_textfield"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/info_block"
+            android:layout_width="209dp"
+            android:layout_height="203dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_avatar"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="55dp"
+                android:src="@drawable/circle_avatar"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="127dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="2dp"
+                android:textAlignment="center"
+                android:text="@string/name"
+                android:textColor="@color/textSettings"
+                android:fontFamily="@font/semibold_italic"
+                android:textSize="32sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </TextView>
+            <TextView
+                android:layout_width="186dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="15dp"
+                android:textAlignment="center"
+                android:text="@string/surname"
+                android:textColor="@color/textSettings"
+                android:fontFamily="@font/semibold_italic"
+                android:textSize="32sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="230dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical"
+            >
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/round_style"
+                android:backgroundTint="@color/fieldSettings"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/change_password"
+                android:fontFamily="@font/semibold_italic"
+                android:textSize="20sp"
+                android:textColor="@color/textSettings"
+                >
+            </Button>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="110dp"
+                android:text="@string/total_amount_of_money"
+                android:textColor="@color/textSettings"
+                android:fontFamily="@font/semibold_italic"
+                android:textSize="26sp"
+                android:backgroundTint="@color/fieldSettings"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+            </TextView>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/fieldSettings"
+                android:background="@drawable/round_style"
+                android:text="@string/amount_of_money"
+                android:textColor="@color/textSettings"
+                android:fontFamily="@font/semibold_italic"
+                android:textSize="26sp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+            </TextView>
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

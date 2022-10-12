@@ -32,8 +32,8 @@ public class MainMenu extends AppCompatActivity {
                    startActivity(intentConvert);
                    break;
                case R.id.settings:
-                  // Intent intentSettings=new Intent(this,Login.class);
-                 //  startActivity(intentSettings);
+                  Intent intentSettings=new Intent(this,Settings.class);
+                 startActivity(intentSettings);
                    break;
 
 

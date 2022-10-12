@@ -8,12 +8,12 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class CurrencyTransfer extends AppCompatActivity {
+public class Settings extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.transfer_screen);
+        setContentView(R.layout.settings_screen);
         bottomNavigationView= findViewById(R.id.bottomNavigationView);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -23,12 +23,12 @@ public class CurrencyTransfer extends AppCompatActivity {
                     startActivity(intentHome);
                     break;
                 case R.id.convert:
-                    Toast.makeText(this, "You are already on that screen", Toast.LENGTH_SHORT).show();
+                    Intent intentConvert=new Intent(this,CurrencyTransfer.class);
+                    startActivity(intentConvert);
 
                     break;
                 case R.id.settings:
-                    Intent intentSettings=new Intent(this,Settings.class);
-                    startActivity(intentSettings);
+                    Toast.makeText(this, "You are already on that screen", Toast.LENGTH_SHORT).show();
                     break;
 
 

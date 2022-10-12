@@ -13,4 +13,6 @@
     <color name="hintColor">#889D99</color>
     <color name="cardName">#475B6F</color>
     <color  name="cardInfo">#343E3E</color>
+    <color name="textSettings">#686565</color>
+    <color name="fieldSettings">#BEBEBE</color>
 </resources>

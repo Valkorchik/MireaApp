@@ -35,4 +35,10 @@
     <string name="card1CurrencyValue">...?</string>
     <string name="eth">ETH</string>
     <string name="ltc">LTC</string>
+    <string name="circle_avatar">Circle avatar</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="change_password">Change password</string>
+    <string name="total_amount_of_money">Total amount of money:</string>
+    <string name="amount_of_money">... $</string>
 </resources>
