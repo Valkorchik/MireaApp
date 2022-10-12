@@ -13,6 +13,7 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration_screen);
+        //TODO: БД для хранения данных
         Button signup=findViewById(R.id.signupButton);
         signup.setOnClickListener(view -> {
             Log.i("Info", "Sign up button tapped");

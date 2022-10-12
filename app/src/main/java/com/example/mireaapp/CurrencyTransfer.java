@@ -14,8 +14,8 @@ public class CurrencyTransfer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.transfer_screen);
+        //TODO: Добавить кард апи и смену валют снизу
         bottomNavigationView= findViewById(R.id.bottomNavigationView);
-
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.home:

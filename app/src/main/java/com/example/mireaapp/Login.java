@@ -13,6 +13,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_screen);
+        //TODO: БД для хранения данных
         Button login = findViewById(R.id.loginButton);
         login.setOnClickListener(view->{
             Log.i("Info", "Log in button tapped");

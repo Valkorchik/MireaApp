@@ -41,4 +41,7 @@
     <string name="change_password">Change password</string>
     <string name="total_amount_of_money">Total amount of money:</string>
     <string name="amount_of_money">... $</string>
+    <string name="change">Change</string>
+    <string name="old_passsword">Old passsword</string>
+    <string name="new_password">New password</string>
 </resources>

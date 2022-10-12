@@ -135,6 +135,7 @@
             android:orientation="vertical"
             >
             <Button
+                android:id="@+id/changePasswordButton"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
