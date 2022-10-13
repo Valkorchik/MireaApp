@@ -8,12 +8,14 @@
     android:background="@drawable/gradient_background">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="326dp"
+        android:layout_width="wrap_content"
         android:layout_height="220dp"
-        android:layout_marginStart="51dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="56dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/bankLogoImageView"
@@ -47,13 +49,15 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
-        android:layout_width="326dp"
+        android:layout_width="wrap_content"
         android:layout_height="335dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="51dp"
         android:layout_marginTop="318dp"
+        android:layout_marginEnd="51dp"
+        app:layout_constraintEnd_toEndOf="parent"
 
         >
 
@@ -140,10 +144,11 @@
     <Button
         android:id="@+id/signupButton"
 
-        android:layout_width="228dp"
+        android:layout_width="228sp"
         android:layout_height="48dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="681dp"
+        android:layout_marginEnd="100dp"
         android:background="@drawable/round_style"
         android:backgroundTint="@color/lightGreen"
         android:fontFamily="@font/bold_italic"
@@ -151,6 +156,7 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

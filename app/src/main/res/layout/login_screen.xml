@@ -8,12 +8,15 @@
     tools:context=".Login">
     <androidx.constraintlayout.widget.ConstraintLayout 
         android:id="@+id/constraintLayout"
-        android:layout_width="326dp"
+        android:layout_width="wrap_content"
         android:layout_height="220dp"
         android:layout_marginStart="51dp"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="51dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
         <ImageView
             android:id="@+id/bankLogoImageView"
@@ -47,13 +50,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:layout_width="326dp"
+        android:layout_width="wrap_content"
         android:layout_height="145dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="51dp"
         android:layout_marginTop="318dp"
+        android:layout_marginEnd="51dp"
 
         >
 
@@ -99,10 +104,12 @@
     </LinearLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
-        android:layout_width="228dp"
+        android:layout_width="wrap_content"
         android:layout_height="129dp"
         android:layout_marginStart="92dp"
+        android:layout_marginEnd="92dp"
         android:layout_marginTop="503dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

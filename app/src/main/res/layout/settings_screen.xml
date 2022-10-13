@@ -64,13 +64,16 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="375dp"
+        android:layout_width="wrap_content"
         android:layout_height="560dp"
-        android:layout_marginStart="18dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="9dp"
         android:layout_marginTop="104dp"
         android:background="@drawable/round_textfield"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
         <LinearLayout
             android:id="@+id/info_block"
@@ -127,8 +130,9 @@
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="35dp"
             android:layout_marginTop="230dp"
+            android:layout_marginEnd="35dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

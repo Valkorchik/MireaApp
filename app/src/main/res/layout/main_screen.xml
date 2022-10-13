@@ -9,8 +9,8 @@
     android:background="@drawable/gradient_background">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="134.85dp"
-        android:layout_height="91dp"
+        android:layout_width="134sp"
+        android:layout_height="91sp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="6dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"
-        app:itemIconSize="60dp"
+        app:itemIconSize="60sp"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/hintColor"
         android:textAlignment="center"
@@ -69,14 +69,16 @@
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="375dp"
-        android:layout_height="560dp"
-        android:layout_marginStart="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="560sp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginTop="113dp"
         android:background="@drawable/round_textfield"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
 
         >
 

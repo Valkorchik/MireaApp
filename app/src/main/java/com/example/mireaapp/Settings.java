@@ -26,6 +26,7 @@ public class Settings extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.home:
+
                     Intent intentHome=new Intent(this,MainMenu.class);
                     startActivity(intentHome);
                     break;
