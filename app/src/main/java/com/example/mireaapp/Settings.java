@@ -14,6 +14,7 @@ public class Settings extends AppCompatActivity {
     Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_screen);
         button=findViewById(R.id.changePasswordButton);
@@ -29,10 +30,12 @@ public class Settings extends AppCompatActivity {
 
                     Intent intentHome=new Intent(this,MainMenu.class);
                     startActivity(intentHome);
+                    finish();
                     break;
                 case R.id.convert:
                     Intent intentConvert=new Intent(this,CurrencyTransfer.class);
                     startActivity(intentConvert);
+                    finish();
 
                     break;
                 case R.id.settings:

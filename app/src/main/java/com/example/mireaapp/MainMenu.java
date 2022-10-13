@@ -32,10 +32,12 @@ public class MainMenu extends AppCompatActivity {
                case R.id.convert:
                    Intent intentConvert=new Intent(this,CurrencyTransfer.class);
                    startActivity(intentConvert);
+                   finish();
                    break;
                case R.id.settings:
                   Intent intentSettings=new Intent(this,Settings.class);
-                 startActivity(intentSettings);
+                    startActivity(intentSettings);
+                   finish();
                    break;
 
 

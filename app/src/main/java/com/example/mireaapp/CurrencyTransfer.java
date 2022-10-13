@@ -21,6 +21,7 @@ public class CurrencyTransfer extends AppCompatActivity {
                 case R.id.home:
                     Intent intentHome=new Intent(this,MainMenu.class);
                     startActivity(intentHome);
+                    finish();
                     break;
                 case R.id.convert:
                     Toast.makeText(this, "You are already on that screen", Toast.LENGTH_SHORT).show();
@@ -29,6 +30,7 @@ public class CurrencyTransfer extends AppCompatActivity {
                 case R.id.settings:
                     Intent intentSettings=new Intent(this,Settings.class);
                     startActivity(intentSettings);
+                    finish();
                     break;
 
 
