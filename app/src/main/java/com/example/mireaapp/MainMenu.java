@@ -18,11 +18,13 @@ public class MainMenu extends AppCompatActivity {
     private boolean mEditTextVisible;
     BottomNavigationView bottomNavigationView;
     Button addButton;
+    Button moneyButton;
     FrameLayout toggler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen);
+
         bottomNavigationView= findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
            switch (item.getItemId()){
@@ -54,6 +56,12 @@ public class MainMenu extends AppCompatActivity {
         addButton.setOnClickListener(view->{
             toggler.setVisibility(View.VISIBLE);
             addButton.setVisibility(View.INVISIBLE);
+        });
+        moneyButton=findViewById(R.id.addMoneyButton);
+        moneyButton.setOnClickListener(view -> {
+            Intent moneyIntent=new Intent(this,Money.class);
+            startActivity(moneyIntent);
+            finish();
         });
     }
 

@@ -44,4 +44,8 @@
     <string name="change">Change</string>
     <string name="old_passsword">Old passsword</string>
     <string name="new_password">New password</string>
+    <string name="hint_card_1">Card 1</string>
+    <string name="add_money_card1">Add Money</string>
+    <string name="card_2_hint">Card 2</string>
+    <string name="back">Back</string>
 </resources>
