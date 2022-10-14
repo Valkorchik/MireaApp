@@ -81,7 +81,7 @@
             tools:ignore="TextContrastCheck" />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/editTextEmail"
             android:layout_width="326dp"
             android:layout_height="55dp"
             android:layout_marginTop="36dp"
@@ -89,8 +89,9 @@
             android:background="@drawable/round_textfield"
             android:ems="10"
             android:fontFamily="@font/medium_italic"
-            android:hint="@string/dateBirth"
-            android:inputType="text|date"
+            app:errorEnabled="true"
+            android:hint="@string/email_number"
+            android:inputType="textEmailAddress"
             android:letterSpacing="0.02"
             android:paddingStart="23dp"
             android:paddingEnd="10dp"
@@ -100,7 +101,7 @@
             tools:ignore="TextContrastCheck" />
 
         <EditText
-            android:id="@+id/editTextPasswordRegistr"
+            android:id="@+id/editTextPassword"
             android:layout_width="326dp"
             android:layout_height="55dp"
             android:layout_marginTop="36dp"
@@ -119,7 +120,7 @@
             tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         <EditText
-            android:id="@+id/editTextPasswordRegistrConfirm"
+            android:id="@+id/editTextPasswordConfirm"
             android:layout_width="326dp"
             android:layout_height="55dp"
             android:layout_marginTop="36dp"

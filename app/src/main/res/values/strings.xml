@@ -48,4 +48,6 @@
     <string name="add_money_card1">Add Money</string>
     <string name="card_2_hint">Card 2</string>
     <string name="back">Back</string>
+    <string name="email_number">Email number</string>
+    <string name="email_number1">Email number</string>
 </resources>
