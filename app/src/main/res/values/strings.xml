@@ -50,4 +50,5 @@
     <string name="back">Back</string>
     <string name="email_number">Email number</string>
     <string name="email_number1">Email number</string>
+    <string name="log_out">Log out</string>
 </resources>

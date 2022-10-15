@@ -138,8 +138,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:orientation="vertical"
             >
+
             <Button
                 android:id="@+id/changePasswordButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/round_style"
+                android:backgroundTint="@color/fieldSettings"
+                android:fontFamily="@font/semibold_italic"
+                android:text="@string/change_password"
+                android:textColor="@color/textSettings"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/LogOutButton"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="25dp"
@@ -148,7 +164,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="@string/change_password"
+                android:text="@string/log_out"
                 android:fontFamily="@font/semibold_italic"
                 android:textSize="20sp"
                 android:textColor="@color/textSettings"

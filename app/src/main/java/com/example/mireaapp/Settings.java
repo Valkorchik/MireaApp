@@ -8,22 +8,30 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Settings extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    Button button;
+    Button buttonChangePassword;
+    Button logOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_screen);
-        button=findViewById(R.id.changePasswordButton);
-        button.setOnClickListener(view -> {
+        buttonChangePassword=findViewById(R.id.changePasswordButton);
+        logOut=findViewById(R.id.LogOutButton);
+        logOut.setOnClickListener(view -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent intentLogOut=new Intent(this,Main.class);
+            startActivity(intentLogOut);
+            finish();
+        });
+
+        buttonChangePassword.setOnClickListener(view -> {
             Intent intent=new Intent(this,ChangePassword.class);
             startActivity(intent);
         });
         bottomNavigationView= findViewById(R.id.bottomNavigationView);
-
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.home:
