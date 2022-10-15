@@ -40,10 +40,10 @@ public class Registration extends AppCompatActivity {
 
         signup.setOnClickListener(view -> {
             Log.i("Info", "Sign up button tapped");
-            if (editTextPassword.getText().toString().equals(editTextPasswordConfirm.getText().toString()) & (editTextPassword.getText().toString().length() >= 6)) {
-
+            if (dateValidation(editTextEmail.getText().toString().trim(),editTextPassword.getText().toString().trim(),editTextPasswordConfirm.getText().toString().trim())) {
                 email = editTextEmail.getText().toString().trim();
                 password = editTextPassword.getText().toString().trim();
+
                 progressDialog.setMessage("Registering Please Wait...");
                 progressDialog.show();
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -68,6 +68,14 @@ public class Registration extends AppCompatActivity {
                 Toast.makeText(Registration.this, "Check your password.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    boolean dateValidation(String email, String password,String confirmPassword) {
+        if (email.isEmpty() | password.isEmpty() | confirmPassword.isEmpty())
+        {
+            Toast.makeText(this, "Email or Password is empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return password.equals(confirmPassword) & (password.length() >= 6);
     }
 }
 
