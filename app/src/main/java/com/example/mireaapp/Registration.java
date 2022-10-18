@@ -91,23 +91,27 @@ public class Registration extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d("Info", "createUserWithEmail:success");
                             FirebaseUser user=mAuth.getCurrentUser();
-                            mData.collection("users").document(user.getUid().toString()).set(data)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Log.d("Document", "DocumentSnapshot successfully written!");
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.w("Document", "Error writing document", e);
-                                        }
-                                    });
-                            progressDialog.dismiss();
-                            Intent intent = new Intent(Registration.this, Login.class);
-                            startActivity(intent);
-                            finish();
+                            if(user!=null) {
+                                mData.collection("users").document(user.getUid().toString()).set(data)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.d("Document", "DocumentSnapshot successfully written!");
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.w("Document", "Error writing document", e);
+                                            }
+                                        });
+                                progressDialog.dismiss();
+
+                                    Intent intent = new Intent(Registration.this, Login.class);
+                                    startActivity(intent);
+                                    finish();
+                            }
+
                         } else {
                             Log.w("Info", "createUserWithEmail:failure", task.getException());
                             Toast.makeText(Registration.this, "Authentication failed.",
