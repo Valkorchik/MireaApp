@@ -186,11 +186,12 @@
 
             </TextView>
             <TextView
+                android:id="@+id/totalMoney"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:backgroundTint="@color/fieldSettings"
                 android:background="@drawable/round_style"
-                android:text="@string/amount_of_money"
+                android:text=""
                 android:textColor="@color/textSettings"
                 android:fontFamily="@font/semibold_italic"
                 android:textSize="26sp"

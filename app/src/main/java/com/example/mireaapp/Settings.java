@@ -1,47 +1,60 @@
 package com.example.mireaapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Settings extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Button buttonChangePassword;
     Button logOut;
+    TextView money;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_screen);
-        buttonChangePassword=findViewById(R.id.changePasswordButton);
-        logOut=findViewById(R.id.LogOutButton);
+        money = findViewById(R.id.totalMoney);
+        moneyView();
+        buttonChangePassword = findViewById(R.id.changePasswordButton);
+        logOut = findViewById(R.id.LogOutButton);
         logOut.setOnClickListener(view -> {
             FirebaseAuth.getInstance().signOut();
-            Intent intentLogOut=new Intent(this,Main.class);
+            Intent intentLogOut = new Intent(this, Main.class);
             startActivity(intentLogOut);
             finish();
         });
 
         buttonChangePassword.setOnClickListener(view -> {
-            Intent intent=new Intent(this,ChangePassword.class);
+            Intent intent = new Intent(this, ChangePassword.class);
             startActivity(intent);
         });
-        bottomNavigationView= findViewById(R.id.bottomNavigationView);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.home:
 
-                    Intent intentHome=new Intent(this,MainMenu.class);
+                    Intent intentHome = new Intent(this, MainMenu.class);
                     startActivity(intentHome);
                     finish();
                     break;
                 case R.id.convert:
-                    Intent intentConvert=new Intent(this,CurrencyTransfer.class);
+                    Intent intentConvert = new Intent(this, CurrencyTransfer.class);
                     startActivity(intentConvert);
                     finish();
 
@@ -53,6 +66,29 @@ public class Settings extends AppCompatActivity {
 
             }
             return true;
+        });
+    }
+
+    public void moneyView() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DocumentReference docRef = FirebaseFirestore.getInstance().collection("users").document(user.getUid());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        int money1 = (int) document.getData().get("money1");
+                        int money2 = (int) document.getData().get("money2");
+                        money.setText(String.valueOf(money1 + money2) + "$");
+                    } else {
+                        Log.d("Document", "No such document");
+                    }
+                } else {
+                    Log.d("Document", "get failed with ", task.getException());
+                }
+
+            }
         });
     }
 }

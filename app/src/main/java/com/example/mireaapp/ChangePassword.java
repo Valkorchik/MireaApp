@@ -14,7 +14,18 @@ public class ChangePassword extends AppCompatActivity {
         setContentView(R.layout.change_password_screen);
         button=findViewById(R.id.changePassword);
         button.setOnClickListener(view -> {
-            //TODO: Сделать сохранение пароля в БД и круг
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String newPassword = "SOME-SECURE-PASSWORD";
+
+            user.updatePassword(newPassword)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Log.d(TAG, "User password updated.");
+                            }
+                        }
+                    });
             finish();
         });
 
