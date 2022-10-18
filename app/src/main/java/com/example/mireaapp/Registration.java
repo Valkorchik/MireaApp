@@ -19,19 +19,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.SetOptions;
-import com.google.firestore.v1.WriteResult;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Registration extends AppCompatActivity {
@@ -45,7 +39,6 @@ public class Registration extends AppCompatActivity {
     EditText editTextPasswordConfirm;
     EditText editTextName;
     private ProgressDialog progressDialog;
-    private List<Object> ArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,27 +52,37 @@ public class Registration extends AppCompatActivity {
         editTextPassword.setError("Password should be at least 6 characters");
         editTextPasswordConfirm.setError("Password should be at least 6 characters");
         progressDialog = new ProgressDialog(this);
-        DocumentReference docRef = FirebaseFirestore.getInstance().collection("users").document("p1hANM1gAejJSqxGyB2r");
-        docRef.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+        DocumentReference docRef = FirebaseFirestore.getInstance().collection("users").document("test");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                assert value != null;
-                editTextName.setText(value.getString("name"));
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d("Document", "DocumentSnapshot data: " + document.getData().get("email"));
+                    } else {
+                        Log.d("Document", "No such document");
+                    }
+                } else {
+                    Log.d("Document", "get failed with ", task.getException());
+                }
             }
         });
-
-
-
-
-
+        Map<String,Object> data=new HashMap<>();
         signup.setOnClickListener(view -> {
             Log.i("Info", "Sign up button tapped");
             if (dateValidation(editTextEmail.getText().toString().trim(),editTextPassword.getText().toString().trim(),editTextPasswordConfirm.getText().toString().trim())) {
                 email = editTextEmail.getText().toString().trim();
                 password = editTextPassword.getText().toString().trim();
-                name=editTextName.toString().trim();
-
-
+                name=editTextName.getText().toString().trim();
+                data.put("email",email);
+                data.put("name", name);
+                data.put("card1", "");
+                data.put("card2","");
+                data.put("pin1","");
+                data.put("pin2","");
+                data.put("money1","100");
+                data.put("money2","100");
                 progressDialog.setMessage("Registering Please Wait...");
                 progressDialog.show();
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -87,6 +90,20 @@ public class Registration extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.d("Info", "createUserWithEmail:success");
+                            FirebaseUser user=mAuth.getCurrentUser();
+                            mData.collection("users").document(user.getUid().toString()).set(data)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d("Document", "DocumentSnapshot successfully written!");
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.w("Document", "Error writing document", e);
+                                        }
+                                    });
                             progressDialog.dismiss();
                             Intent intent = new Intent(Registration.this, Login.class);
                             startActivity(intent);

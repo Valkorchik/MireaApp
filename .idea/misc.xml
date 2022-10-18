@@ -14,21 +14,11 @@
         <entry key="..\:/Projects/MireaApp/app/src/main/res/layout/home_screedn.xml" value="0.22552083333333334" />
         <entry key="..\:/Projects/MireaApp/app/src/main/res/layout/home_screen.xml" value="0.33" />
         <entry key="..\:/Projects/MireaApp/app/src/main/res/layout/login_screen.xml" value="0.25" />
-        <entry key="..\:/Projects/MireaApp/app/src/main/res/layout/main_screen.xml" value="0.33" />
+        <entry key="..\:/Projects/MireaApp/app/src/main/res/layout/main_screen.xml" value="0.1" />
         <entry key="..\:/Projects/MireaApp/app/src/main/res/layout/registration_screen.xml" value="0.23581081081081082" />
+        <entry key="..\:/Projects/MireaApp/app/src/main/res/layout/settings_screen.xml" value="0.22152777777777777" />
         <entry key="..\:/Projects/MireaApp/app/src/main/res/layout/transfer_screen.xml" value="0.33" />
         <entry key="..\:/Projects/MireaApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.23581081081081082" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1935" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/drawable/home_icon_selection.xml" value="0.121" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/drawable/settings_icon_selector.xml" value="0.121" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/layout/change_password_screen.xml" value="0.16216216216216217" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/layout/home_screen.xml" value="0.16216216216216217" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/layout/login_screen.xml" value="0.16216216216216217" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/layout/main_screen.xml" value="0.2" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/layout/registration_screen.xml" value="0.16216216216216217" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/layout/settings_screen.xml" value="0.2" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/layout/transfer_screen.xml" value="0.264" />
-        <entry key="..\:/Users/lapin/MireaApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
