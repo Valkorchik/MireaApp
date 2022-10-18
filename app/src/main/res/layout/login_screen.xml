@@ -73,7 +73,6 @@
             android:importantForAutofill="no"
             android:inputType="textEmailAddress"
             android:letterSpacing="0.02"
-            android:maxLength="16"
             android:paddingStart="23dp"
             android:paddingEnd="10dp"
             android:textColor="@color/black"

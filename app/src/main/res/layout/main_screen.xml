@@ -156,10 +156,11 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/cardNumber1"
                         android:layout_width="282dp"
                         android:layout_height="35dp"
                         android:layout_marginTop="30dp"
-                        android:text="@string/NumberOfCard1"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
@@ -195,10 +196,11 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/pinCard1"
                         android:layout_width="65dp"
                         android:layout_height="39dp"
                        android:layout_marginStart="62dp"
-                        android:text="@string/pinCard1"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
@@ -355,10 +357,11 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/cardNumber2"
                         android:layout_width="282dp"
                         android:layout_height="35dp"
                         android:layout_marginTop="30dp"
-                        android:text="@string/numberOfCard2"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
@@ -394,10 +397,11 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/pinCard2"
                         android:layout_width="65dp"
                         android:layout_height="39dp"
                         android:layout_marginStart="62dp"
-                        android:text="@string/pinCard2"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="@color/white_grey"
                         android:fontFamily="@font/medium_italic"
