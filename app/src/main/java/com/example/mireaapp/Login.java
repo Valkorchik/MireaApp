@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -27,6 +28,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_screen);
+
         mAuth=FirebaseAuth.getInstance();
         Button login = findViewById(R.id.loginButton);
         editTextEmail=findViewById(R.id.editTextEmail);
@@ -48,9 +50,11 @@ public class Login extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Log.d("Info", "signInWithEmail:success");
                                     progressDialog.dismiss();
-                                    Intent intent = new Intent(Login.this, MainMenu.class);
-                                    startActivity(intent);
-                                    finish();
+                                    FirebaseUser user=mAuth.getCurrentUser();
+                                    if(user!=null) {
+                                        Intent intent = new Intent(Login.this, MainMenu.class);
+                                        startActivity(intent);
+                                    }
                                 } else {
                                     Log.w("Info", "signInWithEmail:failure", task.getException());
                                     Toast.makeText(Login.this, "Authentication failed.",
