@@ -28,10 +28,11 @@ public class ChangePassword extends AppCompatActivity {
         newPasswordVerify = findViewById(R.id.editTextNewPasswordVerify);
         newPassword.setError("Password should be at least 6 characters");
         newPasswordVerify.setError("Password should be at least 6 characters");
+
         button = findViewById(R.id.changePassword);
         button.setOnClickListener(view -> {
-            if (validatePassword(newPassword, newPasswordVerify)) {
-                user.updatePassword(newPassword.toString())
+            if (validatePassword(newPassword.getText().toString().trim(), newPasswordVerify.getText().toString().trim())) {
+                user.updatePassword(newPassword.getText().toString().trim())
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
@@ -48,15 +49,16 @@ public class ChangePassword extends AppCompatActivity {
 
     }
 
-    public boolean validatePassword(EditText newPassword, EditText newPasswordVerify) {
-        if (newPassword.toString().length() < 6 | newPasswordVerify.toString().length() < 6) {
+    public boolean validatePassword(String newPassword,String newPasswordVerify) {
+        if (newPassword.length() < 6 | newPasswordVerify.length() < 6) {
             Toast.makeText(this, "Passwords should be at least 6 characters", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (newPassword != newPasswordVerify) {
-            Toast.makeText(this, "Passwords are not equal", Toast.LENGTH_SHORT).show();
+        if ( newPassword.isEmpty() | newPasswordVerify.isEmpty())
+        {
+            Toast.makeText(this, "Password is empty", Toast.LENGTH_SHORT).show();
             return false;
         }
-        return true;
+        return newPassword.equals(newPasswordVerify) & (newPasswordVerify.length() >= 6);
     }
 }

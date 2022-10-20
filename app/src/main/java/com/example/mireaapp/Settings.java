@@ -78,8 +78,8 @@ public class Settings extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        int money1 = (int) document.getData().get("money1");
-                        int money2 = (int) document.getData().get("money2");
+                        int money1 =  Integer.parseInt(document.getData().get("money1").toString()) ;
+                        int money2 = Integer.parseInt(document.getData().get("money2").toString());
                         money.setText(String.valueOf(money1 + money2) + "$");
                     } else {
                         Log.d("Document", "No such document");
