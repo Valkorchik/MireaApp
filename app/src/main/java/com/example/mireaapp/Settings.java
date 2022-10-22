@@ -34,6 +34,7 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.settings_screen);
         money = findViewById(R.id.totalMoney);
         moneyView();
+        nameView();
         buttonChangePassword = findViewById(R.id.changePasswordButton);
         logOut = findViewById(R.id.LogOutButton);
         logOut.setOnClickListener(view -> {
