@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.w3c.dom.Text;
 
 public class Settings extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
@@ -91,4 +94,31 @@ public class Settings extends AppCompatActivity {
             }
         });
     }
-}
+    public void nameView()
+    {
+        TextView name;
+        TextView surname;
+        name=findViewById(R.id.name);
+        surname=findViewById(R.id.surname);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DocumentReference docRef = FirebaseFirestore.getInstance().collection("users").document(user.getUid());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                       String nameD= document.getData().get("name").toString();
+                       String[] parts = nameD.split(" ");
+                       name.setText(parts[0]);
+                       surname.setText(parts[1]);
+                    } else {
+                        Log.d("Document", "No such document");
+                    }
+                } else {
+                    Log.d("Document", "get failed with ", task.getException());
+                }
+
+        }
+    })
+;}}
