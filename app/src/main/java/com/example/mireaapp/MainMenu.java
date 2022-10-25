@@ -91,7 +91,6 @@ public class MainMenu extends AppCompatActivity {
         moneyButton.setOnClickListener(view -> {
             Intent moneyIntent=new Intent(this,Money.class);
             startActivity(moneyIntent);
-            finish();
         });
     }
 

@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.List;
@@ -32,8 +33,7 @@ public class Money extends AppCompatActivity {
     Button addMoneyCard2;
     EditText editTextCard1;
     EditText editTextCard2;
-    FirebaseUser user;
-    DocumentReference docRef;
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     BottomNavigationView bottomNavigationView;
     FirebaseFirestore mData=FirebaseFirestore.getInstance();
     @Override
@@ -44,8 +44,8 @@ public class Money extends AppCompatActivity {
         editTextCard2=findViewById(R.id.editTextCard2);
         addMoneyCard1=findViewById(R.id.addMoneyCard1);
         addMoneyCard2=findViewById(R.id.addMoneyCard2);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        DocumentReference docRef = FirebaseFirestore.getInstance().collection("users").document(user.getUid());
+
+
 
         backButton=findViewById(R.id.backButton);
         backButton.setOnClickListener(view -> {
@@ -54,10 +54,10 @@ public class Money extends AppCompatActivity {
             finish();
         });
         addMoneyCard1.setOnClickListener(view -> {
-            addMoney(addMoneyCard1,editTextCard1.getText().toString().trim(),"1");
+            addMoney(editTextCard1.getText().toString().trim(),"1");
         });
         addMoneyCard2.setOnClickListener(view -> {
-            addMoney(addMoneyCard2,editTextCard2.getText().toString().trim(),"2");
+            addMoney(editTextCard2.getText().toString().trim(),"2");
         });
         bottomNavigationView= findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -83,8 +83,9 @@ public class Money extends AppCompatActivity {
             return true;
         });
     }
-    public void addMoney(Button button,String editTextCard, String num)
+    public void addMoney(String editTextCard, String num)
     {
+        DocumentReference docRef = FirebaseFirestore.getInstance().collection("users").document(user.getUid());
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -95,7 +96,7 @@ public class Money extends AppCompatActivity {
                         String newMoney=String.valueOf(oldMoney+Integer.parseInt(editTextCard));
                         Map<String,Object> data =new HashMap<>();
                         data.put("money"+num,newMoney);
-                        mData.collection("users").document(user.getUid().toString()).set(data)
+                        mData.collection("users").document(user.getUid().toString()).set(data, SetOptions.merge())
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
