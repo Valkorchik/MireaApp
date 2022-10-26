@@ -395,8 +395,8 @@
         >
         <NumberPicker
             android:id="@+id/valuePicker"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

@@ -14,35 +14,40 @@ import org.json.JSONObject;
 import javax.crypto.CipherInputStream;
 
 public class CoinData {
-    static ArrayList<CoinData> data;
+    static ArrayList<CoinData> data = new ArrayList<>();
     int id;
     String name;
-    public CoinData(int id, String name)
-    {
-        this.id=id;
-        this.name=name;
+
+    public CoinData(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
-    public static void initDate()
-    {
-        int i=0;
-        for (String currency: currenciesList)
-        {
-            CoinData obj=new CoinData(i,currency);
+
+    public static void initDate() {
+        int i = 0;
+        for (String currency : currenciesList) {
+            CoinData obj = new CoinData(i, currency);
             data.add(obj);
             i++;
         }
     }
-    public static ArrayList<CoinData> getCoinDataList()
-    {
+
+    public static ArrayList<CoinData> getCoinDataList() {
         return data;
     }
-    public static String[] currencyNames(){
-        String[] names =new String[data.size()];
-        for (int i=0;i<data.size();i++)
-        {
-            names[i]=data.get(i).name;
+
+    public static String[] currencyNames() {
+        String[] names = new String[data.size()];
+        for (int i = 0; i < data.size(); i++) {
+            names[i] = data.get(i).name;
         }
         return names;
+    }
+
+    public String getName()
+
+    {
+        return this.name;
     }
     static List<String> currenciesList = new ArrayList<String>() {{
         add("AUD");
@@ -77,7 +82,7 @@ public class CoinData {
     };
     static final String coinAPIURL = "https://rest.coinapi.io/v1/exchangerate";
     static final String apiKey = "F610029C-8CAB-49B6-9094-6290437BDFBD";
-    static Map<String, String> getCoinData(String selectedCurrency) {
+    public static Map<String, String> getCoinData(String selectedCurrency) {
         Map<String, String> cryptoPrices = new HashMap<>();
         HttpURLConnection connection=null;
         for (String crypto : cryptoList) {
@@ -85,7 +90,6 @@ public class CoinData {
             try {
                 connection=(HttpURLConnection)  new URL(url).openConnection();
                 connection.setRequestMethod("GET");
-                connection.setUseCaches(false);
                 connection.connect();
                 if(HttpURLConnection.HTTP_OK==connection.getResponseCode())
                 {

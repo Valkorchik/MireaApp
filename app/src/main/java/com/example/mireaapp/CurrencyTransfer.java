@@ -19,6 +19,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +32,6 @@ public class CurrencyTransfer extends AppCompatActivity {
     TextView ETHcard2;
     TextView LTCcard2;
     NumberPicker picker;
-    String selectedCurrency = "AUD";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +50,8 @@ public class CurrencyTransfer extends AppCompatActivity {
         picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                Map<String,String> data= CoinData.getCoinData(CoinData.getCoinDataList().get(i1).name);
+                String selectedCurrency= CoinData.getCoinDataList().get(i1).getName();
+                Map<String,String> data= CoinData.getCoinData(selectedCurrency);
                 BTCcard1.setText(String.valueOf(data.get("BTC")));
                 ETHcard1.setText(String.valueOf(data.get("ETH")));
                 LTCcard1.setText(String.valueOf(data.get("LTC")));
