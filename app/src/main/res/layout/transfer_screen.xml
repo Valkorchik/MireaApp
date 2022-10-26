@@ -165,7 +165,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
                         <TextView
-                            android:id="@+id/ETCCard1Value"
+                            android:id="@+id/ETHCard1Value"
                             android:layout_width="100dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="134dp"
@@ -320,7 +320,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
                         <TextView
-                            android:id="@+id/ETCCard2Value"
+                            android:id="@+id/ETHCard2Value"
                             android:layout_width="100dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="134dp"
@@ -386,20 +386,22 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/round_textfield"
         app:layout_constraintTop_toBottomOf="@+id/transfer_card"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="CHANGE VALUE"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:layout_marginTop="5dp"
-            android:textSize="32sp" />
+        <NumberPicker
+            android:id="@+id/valuePicker"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+       
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
