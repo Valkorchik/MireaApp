@@ -1,4 +1,6 @@
 package com.example.mireaapp;
+import android.os.StrictMode;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -84,34 +86,46 @@ public class CoinData {
     static final String apiKey = "F610029C-8CAB-49B6-9094-6290437BDFBD";
     public static Map<String, String> getCoinData(String selectedCurrency) {
         Map<String, String> cryptoPrices = new HashMap<>();
-        HttpURLConnection connection=null;
-        for (String crypto : cryptoList) {
-            String url = String.format("%s/%s/%s?apikey=%s", coinAPIURL,crypto,selectedCurrency,apiKey) ;
-            try {
-                connection=(HttpURLConnection)  new URL(url).openConnection();
-                connection.setRequestMethod("GET");
-                connection.connect();
-                if(HttpURLConnection.HTTP_OK==connection.getResponseCode())
-                {
-                    BufferedReader in= new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                    StringBuffer decodedData=new StringBuffer();
-                    String line;
-                    while((line=in.readLine())!=null)
-                    {
-                        decodedData.append(line);
+        Thread thread = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    HttpURLConnection connection = null;
+                    for (String crypto : cryptoList) {
+                        String url = String.format("%s/%s/%s?apikey=%s", coinAPIURL, crypto, selectedCurrency, apiKey);
+                        try {
+                            connection = (HttpURLConnection) new URL(url).openConnection();
+                            connection.setRequestMethod("GET");
+                            connection.connect();
+                            if (HttpURLConnection.HTTP_OK == connection.getResponseCode()) {
+                                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                                StringBuffer decodedData = new StringBuffer();
+                                String line;
+                                while ((line = in.readLine()) != null) {
+                                    decodedData.append(line);
+                                }
+                                JSONObject response = new JSONObject(decodedData.toString());
+                                int price = response.getInt("rate");
+                                cryptoPrices.put(crypto, String.valueOf(price));
+                            }
+                        } catch (Throwable cause) {
+                            cause.printStackTrace();
+                        } finally {
+                            if (connection != null) {
+                                connection.disconnect();
+                            }
+                        }
                     }
-                    JSONObject response=new JSONObject(decodedData.toString());
-                    int price=response.getInt("rate");
-                    cryptoPrices.put(crypto,String.valueOf(price));
-                }
-            }catch (Throwable cause){
-                cause.printStackTrace();
-            }finally {
-                if (connection!=null){
-                    connection.disconnect();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
-        }
+        });
+
+        thread.start();
+
+
         return cryptoPrices;
     }
 
