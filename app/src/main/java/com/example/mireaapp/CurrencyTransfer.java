@@ -77,7 +77,6 @@ public class CurrencyTransfer extends AppCompatActivity {
                     Intent intentHome=new Intent(this,MainMenu.class);
                     startActivity(intentHome);
                     finish();
-                    onDestroy();
                     break;
                 case R.id.convert:
                     Toast.makeText(this, "You are already on that screen", Toast.LENGTH_SHORT).show();
@@ -86,7 +85,6 @@ public class CurrencyTransfer extends AppCompatActivity {
                     Intent intentSettings=new Intent(this,Settings.class);
                     startActivity(intentSettings);
                     finish();
-                    onDestroy();
                     break;
 
 
@@ -105,7 +103,7 @@ public class CurrencyTransfer extends AppCompatActivity {
             }};
 
         static final String coinAPIURL = "https://rest.coinapi.io/v1/exchangerate";
-        static final String apiKey = "559C7CDB-459A-4337-9023-C3DA04D4FF78";
+        static final String apiKey = "C905DB37-BA86-43E7-9473-84CD2E658DCA";
 
         @Override
         protected Map<String, String> doInBackground(String... selectedCurrency) {
@@ -124,6 +122,7 @@ public class CurrencyTransfer extends AppCompatActivity {
                     String jsonText = readAll(decodedData);
                     JSONObject json = new JSONObject(jsonText);
                     int price = json.getInt("rate");
+                    System.out.println(price);
                     cryptoPrices.put(crypto, String.valueOf(price));
 
                 } catch (Exception e) {

@@ -84,20 +84,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:layout_width="101dp"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="220dp"
-                    android:fontFamily="@font/medium_italic"
-                    android:letterSpacing="0.03"
-                    android:text="@string/card_1"
-                    android:textAlignment="center"
-                    android:textColor="@color/cardName"
-                    android:textSize="24sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <LinearLayout
                     android:layout_width="307dp"
                     android:layout_height="219dp"
@@ -134,7 +120,7 @@
 
                         <TextView
                             android:id="@+id/BTCcard1Value"
-                            android:layout_width="100dp"
+                            android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="134dp"
                             android:fontFamily="@font/medium_italic"
@@ -173,7 +159,7 @@
 
                         <TextView
                             android:id="@+id/ETHCard1Value"
-                            android:layout_width="100dp"
+                            android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="134dp"
                             android:fontFamily="@font/medium_italic"
@@ -213,7 +199,7 @@
 
                         <TextView
                             android:id="@+id/LTCCard1Value"
-                            android:layout_width="100dp"
+                            android:layout_width="150dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="134dp"
                             android:fontFamily="@font/medium_italic"
