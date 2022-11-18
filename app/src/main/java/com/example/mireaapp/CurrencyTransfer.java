@@ -1,27 +1,17 @@
 package com.example.mireaapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
+import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONException;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -30,51 +20,40 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class CurrencyTransfer extends AppCompatActivity {
-    BottomNavigationView bottomNavigationView;
-     static TextView BTCcard1;
-     static TextView ETHcard1;
-     static TextView LTCcard1;
-     Button buttonSave;
-     int state;
-    NumberPicker picker;
+    private static TextView BTCcard1;
+    private static TextView ETHcard1;
+    private static TextView LTCcard1;
+    private int state;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.transfer_screen);
-        BTCcard1=findViewById(R.id.BTCcard1Value);
-        ETHcard1=findViewById(R.id.ETHCard1Value);
-        LTCcard1=findViewById(R.id.LTCCard1Value);
-        buttonSave=findViewById(R.id.buttonSave);
-        picker=findViewById(R.id.valuePicker);
+        BTCcard1 = findViewById(R.id.BTCcard1Value);
+        ETHcard1 = findViewById(R.id.ETHCard1Value);
+        LTCcard1 = findViewById(R.id.LTCCard1Value);
+        Button buttonSave = findViewById(R.id.buttonSave);
+        NumberPicker picker = findViewById(R.id.valuePicker);
         CoinData.initDate();
-        picker.setMaxValue(CoinData.getCoinDataList().size()-1);
+        picker.setMaxValue(CoinData.getCoinDataList().size() - 1);
         picker.setMinValue(0);
         picker.setDisplayedValues(CoinData.currencyNames());
-        picker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                state=i1;
-
-            }
-        });
+        picker.setOnValueChangedListener((numberPicker, i, i1) -> state = i1);
         buttonSave.setOnClickListener(view -> {
             new CoinCalculate().execute(CoinData.getCoinDataList().get(state).getName());
         });
-        bottomNavigationView= findViewById(R.id.bottomNavigationView);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.home:
-                    Intent intentHome=new Intent(this,MainMenu.class);
+                    Intent intentHome = new Intent(this, MainMenu.class);
                     startActivity(intentHome);
                     finish();
                     break;
@@ -82,7 +61,7 @@ public class CurrencyTransfer extends AppCompatActivity {
                     Toast.makeText(this, "You are already on that screen", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.settings:
-                    Intent intentSettings=new Intent(this,Settings.class);
+                    Intent intentSettings = new Intent(this, Settings.class);
                     startActivity(intentSettings);
                     finish();
                     break;
@@ -93,14 +72,14 @@ public class CurrencyTransfer extends AppCompatActivity {
         });
     }
 
-    static class CoinCalculate  extends AsyncTask<String, Void, Map<String,String>>
-    {
+    static class CoinCalculate extends AsyncTask<String, Void, Map<String, String>> {
         List<String> cryptoList = new ArrayList<String>() {
             {
                 add("BTC");
                 add("ETH");
                 add("LTC");
-            }};
+            }
+        };
 
         static final String coinAPIURL = "https://rest.coinapi.io/v1/exchangerate";
         static final String apiKey = "C905DB37-BA86-43E7-9473-84CD2E658DCA";
@@ -139,7 +118,8 @@ public class CurrencyTransfer extends AppCompatActivity {
             }
             return cryptoPrices;
         }
-        private  String readAll(Reader rd) throws IOException {
+
+        private String readAll(Reader rd) throws IOException {
             StringBuilder sb = new StringBuilder();
             int cp;
             while ((cp = rd.read()) != -1) {

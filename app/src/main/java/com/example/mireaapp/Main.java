@@ -1,17 +1,11 @@
 package com.example.mireaapp;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
 import android.os.Bundle;
-import android.text.TextPaint;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 
 
 public class Main extends AppCompatActivity {
@@ -23,16 +17,16 @@ public class Main extends AppCompatActivity {
         Button login = findViewById(R.id.loginButton);
         login.setOnClickListener(view -> {
             Log.i("Info", "Log in button tapped");
-            Intent intent= new Intent(this,Login.class);
-            startActivity(intent);
+            Intent intentLogin = new Intent(this, Login.class);
+            startActivity(intentLogin);
         });
 
 
         Button signup = findViewById(R.id.signupButton);
         signup.setOnClickListener(view -> {
             Log.i("Info", "Sign up button tapped");
-            Intent intent=new Intent(this,Registration.class);
-            startActivity(intent);
+            Intent intentRegistration = new Intent(this, Registration.class);
+            startActivity(intentRegistration);
         });
     }
 

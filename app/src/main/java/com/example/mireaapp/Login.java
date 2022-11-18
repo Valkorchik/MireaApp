@@ -21,64 +21,60 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String email;
     private String password;
-    EditText editTextEmail;
-    EditText editTextPassword;
+    private EditText editTextEmail;
+    private EditText editTextPassword;
     private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_screen);
-
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         Button login = findViewById(R.id.loginButton);
-        editTextEmail=findViewById(R.id.editTextEmail);
-        editTextPassword=findViewById(R.id.editTextPassword);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
         editTextPassword.setError("Password should be at least 6 characters");
         progressDialog = new ProgressDialog(this);
-        login.setOnClickListener(view->{
+        login.setOnClickListener(view -> {
             Log.i("Info", "Log in button tapped");
-            if (dateValidation(editTextEmail.getText().toString().trim(),editTextPassword.getText().toString().trim())) {
+            if (dateValidation(editTextEmail.getText().toString().trim(), editTextPassword.getText().toString().trim())) {
                 email = editTextEmail.getText().toString().trim();
                 password = editTextPassword.getText().toString().trim();
-
                 progressDialog.setMessage("Logging In Please Wait...");
                 progressDialog.show();
                 mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Log.d("Info", "signInWithEmail:success");
-                                    progressDialog.dismiss();
-                                    FirebaseUser user=mAuth.getCurrentUser();
-                                    if(user!=null) {
-                                        Intent intent = new Intent(Login.this, MainMenu.class);
-                                        startActivity(intent);
-                                    }
-                                } else {
-                                    Log.w("Info", "signInWithEmail:failure", task.getException());
-                                    Toast.makeText(Login.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                    progressDialog.dismiss();
-
+                        .addOnCompleteListener(this, task -> {
+                            if (task.isSuccessful()) {
+                                Log.d("Info", "signInWithEmail:success");
+                                progressDialog.dismiss();
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                if (user != null) {
+                                    Intent intentMenu = new Intent(Login.this, MainMenu.class);
+                                    startActivity(intentMenu);
                                 }
+                            } else {
+                                Log.w("Info", "signInWithEmail:failure", task.getException());
+                                Toast.makeText(Login.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
+
                             }
                         });
             }
 
         });
-        Button signup=findViewById(R.id.signupButton);
+        Button signup = findViewById(R.id.signupButton);
         signup.setOnClickListener(view -> {
             Log.i("Info", "Sign up button tapped");
-            Intent intent=new Intent(this,Registration.class);
-            startActivity(intent);
+            Intent intentRegistration = new Intent(this, Registration.class);
+            startActivity(intentRegistration);
             finish();
         });
 
     }
+
     boolean dateValidation(String email, String password) {
-        if (email.isEmpty() | password.isEmpty())
-        {
+        if (email.isEmpty() | password.isEmpty()) {
             Toast.makeText(this, "Email or Password is empty", Toast.LENGTH_SHORT).show();
             return false;
         }

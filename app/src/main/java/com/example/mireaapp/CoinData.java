@@ -3,7 +3,7 @@ package com.example.mireaapp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CoinData{
+public class CoinData {
     static ArrayList<CoinData> data = new ArrayList<>();
     int id;
     String name;
@@ -62,8 +62,6 @@ public class CoinData{
         add("USD");
         add("ZAR");
     }};
-
-
 
 
 }
